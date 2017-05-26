@@ -19,7 +19,7 @@
     <string name="sign_in_error_user_already_exists">El usuario ya existe</string>
     <string name="generic_error">El servicio no está disponible en estos momentos. Por favor, inténtalo más tarde</string>
     <string name="network_error">No dispones de conexión a Internet. Por favor, inténtalo maś tarde</string>
-    <string name="login_recover_password">¿Olvidaste tu contraseña? te ayudamos</string>
+    <string name="login_recover_password">¿Olvidaste tu contraseña? Te ayudamos</string>
     <string name="login_sign_in">¿Aún no tienes una cuenta? Regístrate</string>
     <string name="sign_in_error_phone_format">El teléfono introducido es incorrecto</string>
     <string name="recover_password_description">Introduce tu correo y te enviaremos un email con información para restaurar tu contraseña</string>
