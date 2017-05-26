@@ -4,7 +4,7 @@ import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.executor.MainT
 import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.executor.UseCaseExecutor
 
 
-abstract class BaseUseCase<R : BaseRequest?, C : BaseResponse>(var executor: UseCaseExecutor,
+abstract class BaseUseCase<R : BaseRequest, C : BaseResponse>(var executor: UseCaseExecutor,
                                                                var mainThread: MainThread) {
 
     var request: R? = null
