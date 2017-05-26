@@ -78,11 +78,11 @@ class SignInActivity : BaseActivity(), SignInView {
     @OnClick(R.id.button_sign_in)
     fun onViewClicked() {
         presenter.signIn(
-                inputName.text.toString(),
-                inputSurname.text.toString(),
-                inputEmail.text.toString(),
-                inputPassword.text.toString(),
-                inputRepeatPassword.text.toString())
+                inputName.text(),
+                inputSurname.text(),
+                inputEmail.text(),
+                inputPassword.text(),
+                inputRepeatPassword.text())
     }
 
 }

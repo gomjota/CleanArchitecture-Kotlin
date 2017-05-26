@@ -61,8 +61,8 @@ class LoginActivity : BaseActivity(), LoginView {
         when (view.id) {
             R.id.text_recover_password -> presenter.navigateToRecoverPassword()
             R.id.text_sign_in -> presenter.navigateToSignIn()
-            R.id.button_login -> presenter.login(inputEmail.text.toString(),
-                    inputPassword.text.toString())
+            R.id.button_login -> presenter.login(inputEmail.text(),
+                    inputPassword.text())
         }
     }
 }

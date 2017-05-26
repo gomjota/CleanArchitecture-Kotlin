@@ -54,7 +54,7 @@ class RecoverPasswordActivity : BaseActivity(), RecoverPasswordView {
     @OnClick(R.id.button_recover_password)
     fun onViewClicked(view: View) {
         when (view.id) {
-            R.id.button_recover_password -> presenter.recoverPassword(inputEmail.text.toString())
+            R.id.button_recover_password -> presenter.recoverPassword(inputEmail.text())
         }
     }
 }
