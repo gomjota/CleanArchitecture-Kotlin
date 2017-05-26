@@ -5,8 +5,7 @@ import android.os.Looper
 import javax.inject.Inject
 
 
-class MainThreadImpl @Inject
-constructor() : MainThread {
+class MainThreadImpl : MainThread {
 
     var handler: Handler = Handler(Looper.getMainLooper())
 

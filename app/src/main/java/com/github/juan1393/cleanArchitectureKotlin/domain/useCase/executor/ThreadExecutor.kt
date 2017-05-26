@@ -7,8 +7,7 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 
-class ThreadExecutor @Inject
-constructor() : UseCaseExecutor {
+class ThreadExecutor : UseCaseExecutor {
 
     companion object {
         private val CORE_POOL_SIZE = 3
