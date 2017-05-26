@@ -38,8 +38,6 @@ class SignInActivity : BaseActivity(), SignInView {
 
     override var layoutId: Int = R.layout.activity_sign_in
 
-    override fun getPresenter(): Presenter<*> = presenter
-
     override fun setupInjection(applicationComponent: ApplicationComponent) {
         applicationComponent.plus(SignInActivityModule(this))
                 .injectTo(this)

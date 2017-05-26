@@ -30,8 +30,6 @@ class RecoverPasswordActivity : BaseActivity(), RecoverPasswordView {
 
     override var layoutId: Int = R.layout.activity_recover_password
 
-    override fun getPresenter(): Presenter<*> = presenter
-
     override fun setupInjection(applicationComponent: ApplicationComponent) {
         applicationComponent.plus(RecoverPasswordActivityModule(this))
                 .injectTo(this)

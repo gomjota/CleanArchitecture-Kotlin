@@ -31,8 +31,6 @@ class LoginActivity : BaseActivity(), LoginView {
 
     override var layoutId: Int = R.layout.activity_login
 
-    override fun getPresenter(): Presenter<*> = presenter
-
     override fun setupInjection(applicationComponent: ApplicationComponent) {
         applicationComponent.plus(LoginActivityModule(this))
                 .injectTo(this)

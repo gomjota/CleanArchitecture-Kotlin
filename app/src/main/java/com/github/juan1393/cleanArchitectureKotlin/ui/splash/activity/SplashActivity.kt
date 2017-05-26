@@ -17,8 +17,6 @@ class SplashActivity : BaseActivity(), SplashView {
 
     override var layoutId: Int = R.layout.activity_splash
 
-    override fun getPresenter(): Presenter<*> = presenter
-
     override fun setupInjection(applicationComponent: ApplicationComponent) {
         applicationComponent.plus(SplashActivityModule(this))
                 .injectTo(this)

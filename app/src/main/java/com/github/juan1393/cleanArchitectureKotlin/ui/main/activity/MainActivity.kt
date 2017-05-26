@@ -18,8 +18,6 @@ class MainActivity : BaseActivity(), MainView {
 
     override var layoutId: Int = R.layout.activity_main
 
-    override fun getPresenter(): Presenter<*> = presenter
-
     override fun setupInjection(applicationComponent: ApplicationComponent) {
         applicationComponent.plus(MainActivityModule(this))
                 .injectTo(this)

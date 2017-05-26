@@ -16,9 +16,6 @@ abstract class BaseActivity : AppCompatActivity() {
 
     abstract var layoutId: Int
 
-    var basePresenter: Presenter<*>? = null
-
-    abstract fun getPresenter(): Presenter<*>
     abstract fun setupInjection(applicationComponent: ApplicationComponent)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +23,6 @@ abstract class BaseActivity : AppCompatActivity() {
         setupInjection(App.graph)
         initView()
         navigator.currentActivity = this
-        basePresenter = getPresenter()
     }
 
     private fun initView() {
