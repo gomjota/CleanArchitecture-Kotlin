@@ -4,7 +4,6 @@ import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.base.BaseUseCa
 import java.util.concurrent.LinkedBlockingQueue
 import java.util.concurrent.ThreadPoolExecutor
 import java.util.concurrent.TimeUnit
-import javax.inject.Inject
 
 
 class ThreadExecutor : UseCaseExecutor {

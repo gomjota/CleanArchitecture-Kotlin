@@ -1,6 +1,5 @@
 package com.github.juan1393.cleanArchitectureKotlin.ui.signIn.activity
 
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import butterknife.BindView

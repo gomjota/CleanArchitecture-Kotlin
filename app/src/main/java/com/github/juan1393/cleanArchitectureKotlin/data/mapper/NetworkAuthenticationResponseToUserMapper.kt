@@ -1,7 +1,7 @@
 package com.github.juan1393.cleanArchitectureKotlin.data.mapper
 
-import com.github.juan1393.cleanArchitectureKotlin.data.source.network.request.base.auth.NetworkUserAuthenticationResponse
 import com.github.juan1393.cleanArchitectureKotlin.data.exception.MapperException
+import com.github.juan1393.cleanArchitectureKotlin.data.source.network.request.base.auth.NetworkUserAuthenticationResponse
 import com.github.juan1393.cleanArchitectureKotlin.domain.model.User
 
 
