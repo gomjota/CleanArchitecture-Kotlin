@@ -15,22 +15,22 @@ class SignInRequest(var name: String, var surname: String,
     }
 
     override fun validate(): Boolean {
-        if (!UserValidator.isNameValid(name)) {
+        if (!(UserValidator isNameValid (name))) {
             validator.onIncorrectNameFormat()
             return false
         }
 
-        if (!UserValidator.isSurnameValid(surname)) {
+        if (!(UserValidator isSurnameValid (surname))) {
             validator.onIncorrectSurnameFormat()
             return false
         }
 
-        if (!UserValidator.isEmailFormatValid(email)) {
+        if (!(UserValidator isEmailFormatValid (email))) {
             validator.onIncorrectEmailFormat()
             return false
         }
 
-        if (!UserValidator.isPasswordValid(password)) {
+        if (!(UserValidator isPasswordValid (password))) {
             validator.onIncorrectPasswordFormat()
             return false
         }

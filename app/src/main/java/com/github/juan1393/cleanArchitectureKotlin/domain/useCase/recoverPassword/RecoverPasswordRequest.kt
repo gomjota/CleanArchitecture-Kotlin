@@ -8,7 +8,7 @@ class RecoverPasswordRequest(val email: String,
         BaseRequest() {
 
     override fun validate(): Boolean {
-        if (!UserValidator.isEmailFormatValid(email)) {
+        if (!(UserValidator isEmailFormatValid (email))) {
             validator.onEmailFormatNotValid()
             return false
         }

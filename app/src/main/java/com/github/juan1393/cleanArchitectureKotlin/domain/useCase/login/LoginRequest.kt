@@ -13,12 +13,12 @@ class LoginRequest(var email: String, var password: String, private val validato
     }
 
     override fun validate(): Boolean {
-        if (!UserValidator.isEmailFormatValid(email)) {
+        if (!(UserValidator isEmailFormatValid(email))) {
             validator.onIncorrectEmailFormat()
             return false
         }
 
-        if (!UserValidator.isPasswordValid(password)) {
+        if (!(UserValidator isPasswordValid(password))) {
             validator.onIncorrectPasswordFormat()
             return false
         }
