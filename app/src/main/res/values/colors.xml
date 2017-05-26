@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2b819d</color>
+    <color name="colorPrimaryDark">#004063</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorProgressBarDefault">#5588FF</color>
+    <color name="colorAppNameSplash">#000000</color>
+</resources>

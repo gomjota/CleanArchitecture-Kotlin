@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Clean Architecture</string>
+    <string name="login_email">Email</string>
+    <string name="login_login">Iniciar sesión</string>
+    <string name="login_password">Contraseña</string>
+    <string name="sign_in_email">Email</string>
+    <string name="sign_in_name">Nombre</string>
+    <string name="sign_in_surname">Apellidos</string>
+    <string name="sign_in_password">Contraseña</string>
+    <string name="sign_in_sign_in">Crear cuenta</string>
+    <string name="login_error_email_format">Formato de email incorrecto</string>
+    <string name="login_error_password_format">La contraseña debe tener al menos 8 caracteres, una minúscula, una mayúscula y un número</string>
+    <string name="login_error_login">Email o contraseña incorrectos</string>
+    <string name="sign_in_error_name_format">El nombre debe tener más de %d caracteres</string>
+    <string name="sign_in_error_surname_format">Los apellidos deben tener más de %d caracteres</string>
+    <string name="sign_in_error_email_format">Formato de email incorrecto</string>
+    <string name="sign_in_error_password_format">La contraseña debe tener al menos 8 caracteres, una minúscula, una mayúscula y un número</string>
+    <string name="sign_in_error_user_already_exists">El usuario ya existe</string>
+    <string name="generic_error">El servicio no está disponible en estos momentos. Por favor, inténtalo más tarde</string>
+    <string name="network_error">No dispones de conexión a Internet. Por favor, inténtalo maś tarde</string>
+    <string name="login_recover_password">¿Olvidaste tu contraseña? te ayudamos</string>
+    <string name="login_sign_in">¿Aún no tienes una cuenta? Regístrate</string>
+    <string name="sign_in_error_phone_format">El teléfono introducido es incorrecto</string>
+    <string name="recover_password_description">Introduce tu correo y te enviaremos un email con información para restaurar tu contraseña</string>
+    <string name="recover_password_email">Email</string>
+    <string name="recover_password_recover_password">Recuperar contraseña</string>
+    <string name="recover_password_error_user_not_found">No existe ningún usuario con este email</string>
+    <string name="recover_password_error_email_format">Formato de email incorrecto</string>
+    <string name="sign_in_repeat_password">Repite la contraseña</string>
+    <string name="sign_in_error_password_not_match">Las contraseñas no coinciden</string>
+    <string name="sign_out_sign_out">Cerrar sesión</string>
+</resources>

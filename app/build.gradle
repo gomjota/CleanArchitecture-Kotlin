@@ -1,0 +1,84 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+    defaultConfig {
+        applicationId "com.github.juan1393.cleanArchitectureKotlin"
+        minSdkVersion 17
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation":
+                                     "$projectDir/schemas".toString()]
+            }
+        }
+    }
+
+    buildTypes {
+        def STRING = "String"
+        def INT = "int"
+        def API_URL = "API_URL"
+        def MIN_NAME_LENGTH = "MIN_NAME_LENGTH"
+        def MIN_SURNAME_LENGTH = "MIN_SURNAME_LENGTH"
+        def PHONE_LENGTH = "PHONE_LENGTH"
+
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        all {
+            buildConfigField INT, MIN_NAME_LENGTH, "2"
+            buildConfigField INT, MIN_SURNAME_LENGTH, "2"
+            buildConfigField INT, PHONE_LENGTH, "9"
+            buildConfigField STRING, API_URL, "\"http://apiurlexample.com\""
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.google.dagger:dagger:2.10'
+    compile 'com.jakewharton:butterknife:8.5.1'
+    compile 'com.squareup.retrofit2:retrofit:2.2.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.pnikosis:materialish-progress:1.7'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:2.8.8'
+    testCompile 'com.squareup.okhttp3:mockwebserver:3.6.0'
+    kapt 'com.google.dagger:dagger-compiler:2.10'
+    kapt 'com.jakewharton:butterknife-compiler:8.5.1'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile 'android.arch.persistence.room:runtime:1.0.0-alpha1'
+    annotationProcessor 'android.arch.persistence.room:compiler:1.0.0-alpha1'
+    kapt "android.arch.persistence.room:compiler:1.0.0-alpha1"
+}
+
+task copyTestClasses(type: Copy) {
+    from "build/tmp/kotlin-classes/debugUnitTest"
+    into "build/intermediates/classes/debug"
+}
+
+task copySdkClasses(type: Copy) {
+    from "build/tmp/kotlin-classes/debug"
+    into "build/intermediates/classes/debug"
+}

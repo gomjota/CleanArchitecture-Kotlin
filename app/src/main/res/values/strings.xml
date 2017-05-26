@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Clean Architecture</string>
+    <string name="login_email">Email</string>
+    <string name="login_password">Password</string>
+    <string name="login_login">Login</string>
+    <string name="sign_in_name">Name</string>
+    <string name="sign_in_surname">Surname</string>
+    <string name="sign_in_email">Email</string>
+    <string name="sign_in_password">Password</string>
+    <string name="sign_in_sign_in">Sign In</string>
+    <string name="login_error_email_format">Email format is incorrect</string>
+    <string name="login_error_password_format">Password must contains at least 8 characters, a lower case letter, an upper case letter, and a number</string>
+    <string name="login_error_login">Email or password incorrect</string>
+    <string name="sign_in_error_name_format">Name must have more than %d characters</string>
+    <string name="sign_in_error_surname_format">Surname must have more than %d characters</string>
+    <string name="sign_in_error_email_format">Email format is incorrect</string>
+    <string name="sign_in_error_password_format">Password must contains at least 8 characters, a lower case letter, an upper case letter, and a number</string>
+    <string name="sign_in_error_user_already_exists">User already exists</string>
+    <string name="generic_error">Ups! The service is not available now. Please, try later</string>
+    <string name="network_error">You have not got Internet connection. Please, try later</string>
+    <string name="login_recover_password">Forgot your password? We help you</string>
+    <string name="login_sign_in">Not registered yet? Sign in</string>
+    <string name="sign_in_error_phone_format">Phone entered is incorrect</string>
+    <string name="recover_password_description">Insert your email and we will send you information to recover your password</string>
+    <string name="recover_password_email">Email</string>
+    <string name="recover_password_recover_password">Recover password</string>
+    <string name="recover_password_error_user_not_found">User not found. Please, enter a valid email</string>
+    <string name="recover_password_error_email_format">Email format is incorrect</string>
+    <string name="sign_in_repeat_password">Repeat the password</string>
+    <string name="sign_in_error_password_not_match">Passwords do not match</string>
+    <string name="sign_out_sign_out">Sign out</string>
+
+</resources>
