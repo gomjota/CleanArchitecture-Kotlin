@@ -8,9 +8,7 @@ import butterknife.OnClick
 import com.github.juan1393.cleanArchitectureKotlin.R
 import com.github.juan1393.cleanArchitectureKotlin.app.di.component.ApplicationComponent
 import com.github.juan1393.cleanArchitectureKotlin.app.di.subcomponent.login.LoginActivityModule
-import com.github.juan1393.cleanArchitectureKotlin.ui.base.BaseActivity
-import com.github.juan1393.cleanArchitectureKotlin.ui.base.Presenter
-import com.github.juan1393.cleanArchitectureKotlin.ui.base.toast
+import com.github.juan1393.cleanArchitectureKotlin.ui.base.*
 import com.github.juan1393.cleanArchitectureKotlin.ui.login.presenter.LoginPresenter
 import com.pnikosis.materialishprogress.ProgressWheel
 import javax.inject.Inject
@@ -49,13 +47,13 @@ class LoginActivity : BaseActivity(), LoginView {
     }
 
     override fun showLoginLoading() {
-        loadingLogin.visibility = View.VISIBLE
-        buttonLogin.visibility = View.GONE
+        loadingLogin.visible()
+        buttonLogin.gone()
     }
 
     override fun hideLoginLoading() {
-        loadingLogin.visibility = View.GONE
-        buttonLogin.visibility = View.VISIBLE
+        loadingLogin.gone()
+        buttonLogin.visible()
     }
 
     @OnClick(R.id.text_recover_password, R.id.text_sign_in, R.id.button_login)

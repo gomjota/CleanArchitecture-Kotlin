@@ -8,9 +8,7 @@ import butterknife.OnClick
 import com.github.juan1393.cleanArchitectureKotlin.R
 import com.github.juan1393.cleanArchitectureKotlin.app.di.component.ApplicationComponent
 import com.github.juan1393.cleanArchitectureKotlin.app.di.subcomponent.recoverPassword.RecoverPasswordActivityModule
-import com.github.juan1393.cleanArchitectureKotlin.ui.base.BaseActivity
-import com.github.juan1393.cleanArchitectureKotlin.ui.base.Presenter
-import com.github.juan1393.cleanArchitectureKotlin.ui.base.toast
+import com.github.juan1393.cleanArchitectureKotlin.ui.base.*
 import com.github.juan1393.cleanArchitectureKotlin.ui.recoverPassword.presenter.RecoverPasswordPresenter
 import com.pnikosis.materialishprogress.ProgressWheel
 import javax.inject.Inject
@@ -44,13 +42,13 @@ class RecoverPasswordActivity : BaseActivity(), RecoverPasswordView {
     }
 
     override fun showRecoverPasswordLoading() {
-        loadingRecoverPassword.visibility = View.VISIBLE
-        buttonRecoverPassword.visibility = View.GONE
+        loadingRecoverPassword.visible()
+        buttonRecoverPassword.gone()
     }
 
     override fun hideRecoverPasswordLoading() {
-        loadingRecoverPassword.visibility = View.GONE
-        buttonRecoverPassword.visibility = View.VISIBLE
+        loadingRecoverPassword.gone()
+        buttonRecoverPassword.visible()
     }
 
     @OnClick(R.id.button_recover_password)

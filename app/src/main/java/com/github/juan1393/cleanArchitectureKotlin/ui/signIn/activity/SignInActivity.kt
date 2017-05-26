@@ -9,9 +9,7 @@ import com.github.juan1393.cleanArchitectureKotlin.BuildConfig
 import com.github.juan1393.cleanArchitectureKotlin.R
 import com.github.juan1393.cleanArchitectureKotlin.app.di.component.ApplicationComponent
 import com.github.juan1393.cleanArchitectureKotlin.app.di.subcomponent.signIn.SignInActivityModule
-import com.github.juan1393.cleanArchitectureKotlin.ui.base.BaseActivity
-import com.github.juan1393.cleanArchitectureKotlin.ui.base.Presenter
-import com.github.juan1393.cleanArchitectureKotlin.ui.base.toast
+import com.github.juan1393.cleanArchitectureKotlin.ui.base.*
 import com.github.juan1393.cleanArchitectureKotlin.ui.signIn.presenter.SignInPresenter
 import com.pnikosis.materialishprogress.ProgressWheel
 import javax.inject.Inject
@@ -68,13 +66,13 @@ class SignInActivity : BaseActivity(), SignInView {
     }
 
     override fun showSignInLoading() {
-        loadingSignIn.visibility = View.VISIBLE
-        buttonSignIn.visibility = View.GONE
+        loadingSignIn.visible()
+        buttonSignIn.gone()
     }
 
     override fun hideSignInLoading() {
-        loadingSignIn.visibility = View.GONE
-        buttonSignIn.visibility = View.VISIBLE
+        loadingSignIn.gone()
+        buttonSignIn.visible()
     }
 
     @OnClick(R.id.button_sign_in)
