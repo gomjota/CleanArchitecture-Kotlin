@@ -5,7 +5,7 @@ import com.github.juan1393.cleanArchitectureKotlin.domain.validator.UserValidato
 
 class RecoverPasswordRequest(val email: String,
                              private val validator: Validator) :
-        BaseRequest() {
+        BaseRequest {
 
     override fun validate(): Boolean {
         if (!(UserValidator isEmailFormatValid (email))) {

@@ -6,7 +6,7 @@ import com.github.juan1393.cleanArchitectureKotlin.domain.validator.UserValidato
 
 
 class LoginRequest(var email: String, var password: String, private val validator: Validator)
-    : BaseRequest() {
+    : BaseRequest {
 
     fun securePassword() {
         password = HASH.md5(password)

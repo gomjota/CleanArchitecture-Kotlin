@@ -8,7 +8,7 @@ import com.github.juan1393.cleanArchitectureKotlin.domain.validator.UserValidato
 class SignInRequest(var name: String, var surname: String,
                     var email: String, var password: String,
                     var repeatedPassword: String,
-                    private val validator: Validator) : BaseRequest() {
+                    private val validator: Validator) : BaseRequest {
 
     fun securePassword() {
         this.password = HASH.md5(password)

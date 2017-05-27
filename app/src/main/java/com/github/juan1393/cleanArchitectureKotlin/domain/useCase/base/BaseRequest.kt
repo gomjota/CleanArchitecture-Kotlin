@@ -1,6 +1,6 @@
 package com.github.juan1393.cleanArchitectureKotlin.domain.useCase.base
 
-abstract class BaseRequest {
+interface BaseRequest {
 
-    abstract fun validate(): Boolean
+    fun validate(): Boolean
 }
