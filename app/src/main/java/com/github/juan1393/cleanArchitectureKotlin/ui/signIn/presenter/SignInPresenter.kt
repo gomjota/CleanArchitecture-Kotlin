@@ -11,7 +11,7 @@ import com.github.juan1393.cleanArchitectureKotlin.ui.signIn.activity.SignInView
 class SignInPresenter(override val view: SignInView,
                       override val navigator: Navigator,
                       var signInUseCase: SignInUseCase) :
-        Presenter<SignInView>(), SignInRequest.Validator, SignInResponse {
+        Presenter<SignInView>, SignInRequest.Validator, SignInResponse {
 
     fun signIn(name: String, surname: String, email: String, password: String,
                repeatedPassword: String) {

@@ -11,7 +11,7 @@ import com.github.juan1393.cleanArchitectureKotlin.ui.recoverPassword.activity.R
 class RecoverPasswordPresenter(override val view: RecoverPasswordView,
                                override val navigator: Navigator,
                                var recoverPasswordUseCase: RecoverPasswordUseCase) :
-        Presenter<RecoverPasswordView>(),
+        Presenter<RecoverPasswordView>,
         RecoverPasswordRequest.Validator, RecoverPasswordResponse {
 
     fun recoverPassword(email: String) {

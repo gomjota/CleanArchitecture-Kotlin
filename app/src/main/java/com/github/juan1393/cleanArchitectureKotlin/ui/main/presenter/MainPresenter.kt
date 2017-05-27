@@ -9,7 +9,7 @@ import com.github.juan1393.cleanArchitectureKotlin.ui.main.activity.MainView
 class MainPresenter(override val view: MainView,
                     override val navigator: Navigator,
                     var signOutUseCase: SignOutUseCase)
-    : Presenter<MainView>() {
+    : Presenter<MainView> {
 
     fun signOut() {
         signOutUseCase.execute()

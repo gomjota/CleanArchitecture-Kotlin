@@ -13,7 +13,7 @@ import kotlin.concurrent.schedule
 class SplashPresenter(override val view: SplashView,
                       override val navigator: Navigator,
                       val getCurrentUserUseCase: GetCurrentUserUseCase) :
-        Presenter<SplashView>(), GetCurrentUserResponse {
+        Presenter<SplashView>, GetCurrentUserResponse {
 
     private val COUNT_DOWN_TIME: Long = 2000
 

@@ -12,7 +12,7 @@ import com.github.juan1393.cleanArchitectureKotlin.ui.login.activity.LoginView
 class LoginPresenter(override val view: LoginView,
                      override val navigator: Navigator,
                      var loginUseCase: LoginUseCase) :
-        Presenter<LoginView>(), LoginRequest.Validator, LoginResponse {
+        Presenter<LoginView>, LoginRequest.Validator, LoginResponse {
 
     fun login(email: String, password: String) {
         view.showLoginLoading()

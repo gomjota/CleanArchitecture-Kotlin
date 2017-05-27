@@ -3,13 +3,13 @@ package com.github.juan1393.cleanArchitectureKotlin.ui.base
 import com.github.juan1393.cleanArchitectureKotlin.app.navigator.Navigator
 import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.base.BaseResponse
 
-abstract class Presenter<out T : PresentationView> :
+interface Presenter<out T : PresentationView> :
         BaseResponse {
 
-    abstract val view: T
-    abstract val navigator: Navigator
+    val view: T
+    val navigator: Navigator
 
-    abstract fun clearView()
+    fun clearView()
 
     override fun onNetworkConnectionError() {
         clearView()
