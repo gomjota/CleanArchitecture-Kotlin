@@ -16,30 +16,29 @@ class UserRepository(val networkDataSource: NetworkDataSource, val diskDataSourc
 
     fun getCurrentUser(): Response<User> {
         val response = diskDataSource.getUser()
-        if (response != null) {
-            return Response(data = response)
-        }
+        response ?: Response(data = response)
         throw UserNotFoundException()
     }
 
     fun login(request: LoginRequest): Response<User> {
         val response = networkDataSource.login(request)
         val user = response.data
-        user?.let {
-            diskDataSource.deleteAllUsers()
-            diskDataSource.insertUser(it)
-        }
+        saveUser(user)
         return response
     }
 
     fun signIn(request: SignInRequest): Response<User> {
         val response = networkDataSource.signIn(request)
         val user = response.data
+        saveUser(user)
+        return response
+    }
+
+    private fun saveUser(user: User?) {
         user?.let {
             diskDataSource.deleteAllUsers()
             diskDataSource.insertUser(it)
         }
-        return response
     }
 
     fun recoverPassword(request: RecoverPasswordRequest): Response<Void>
