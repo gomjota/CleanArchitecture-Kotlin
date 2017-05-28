@@ -14,7 +14,7 @@ import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.login.LoginReq
 import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.recoverPassword.RecoverPasswordRequest
 import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.signIn.SignInRequest
 
-open class NetworkDataSource(var networkClientManager: NetworkClientManager) {
+class NetworkDataSource(var networkClientManager: NetworkClientManager) {
 
     @Throws(NetworkConnectionException::class, NetworkServiceException::class, IncorrectAuthenticationCredentialsException::class)
     fun login(request: LoginRequest): Response<User> {

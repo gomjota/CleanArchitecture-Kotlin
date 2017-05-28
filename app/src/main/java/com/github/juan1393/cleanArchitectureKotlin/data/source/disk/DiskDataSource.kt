@@ -4,7 +4,7 @@ import com.github.juan1393.cleanArchitectureKotlin.App
 import com.github.juan1393.cleanArchitectureKotlin.domain.model.Token
 import com.github.juan1393.cleanArchitectureKotlin.domain.model.User
 
-open class DiskDataSource(appContext: App) {
+class DiskDataSource(appContext: App) {
 
     companion object {
         var database: Database? = null
