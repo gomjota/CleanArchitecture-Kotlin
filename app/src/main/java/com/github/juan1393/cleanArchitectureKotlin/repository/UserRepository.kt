@@ -15,9 +15,9 @@ class UserRepository(val networkDataSource: NetworkDataSource, val diskDataSourc
                      val cacheDataSource: CacheDataSource) {
 
     fun getCurrentUser(): Response<User> {
-        val response = diskDataSource.getUser()
-        response ?: Response(data = response)
-        throw UserNotFoundException()
+        var user = cacheDataSource.user
+        if (user == null) user = diskDataSource.getUser() else return Response(user)
+        if (user == null) throw UserNotFoundException() else return Response(user)
     }
 
     fun login(request: LoginRequest): Response<User> {
@@ -36,6 +36,7 @@ class UserRepository(val networkDataSource: NetworkDataSource, val diskDataSourc
 
     private fun saveUser(user: User?) {
         user?.let {
+            cacheDataSource.user = user
             diskDataSource.deleteAllUsers()
             diskDataSource.insertUser(it)
         }
