@@ -15,9 +15,7 @@ abstract class BaseUseCase<R : BaseRequest, C : BaseResponse>(var executor: UseC
         this.response = response
 
         val validated = request?.validate() ?: true
-        if(validated) {
-            executor.run(this)
-        }
+        if(validated) executor.run(this)
     }
 
     abstract fun run()
