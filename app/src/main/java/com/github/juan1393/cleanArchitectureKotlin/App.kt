@@ -17,7 +17,7 @@ class App : Application() {
         initializeDagger()
     }
 
-    fun initializeDagger() {
+    private fun initializeDagger() {
         graph = DaggerApplicationComponent.builder()
                 .applicationModule(ApplicationModule(this))
                 .build()

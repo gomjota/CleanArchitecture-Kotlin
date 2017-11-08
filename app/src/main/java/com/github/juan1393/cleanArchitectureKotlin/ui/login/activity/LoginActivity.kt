@@ -11,21 +11,14 @@ import com.github.juan1393.cleanArchitectureKotlin.app.di.subcomponent.login.Log
 import com.github.juan1393.cleanArchitectureKotlin.ui.base.*
 import com.github.juan1393.cleanArchitectureKotlin.ui.login.presenter.LoginPresenter
 import com.pnikosis.materialishprogress.ProgressWheel
+import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.progress_bar_default.*
 import javax.inject.Inject
 
 class LoginActivity : BaseActivity(), LoginView {
 
     @Inject
     lateinit var presenter: LoginPresenter
-
-    @BindView(R.id.input_email)
-    lateinit var inputEmail: EditText
-    @BindView(R.id.input_password)
-    lateinit var inputPassword: EditText
-    @BindView(R.id.button_login)
-    lateinit var buttonLogin: Button
-    @BindView(R.id.progress_wheel)
-    lateinit var loadingLogin: ProgressWheel
 
     override var layoutId: Int = R.layout.activity_login
 
@@ -47,13 +40,13 @@ class LoginActivity : BaseActivity(), LoginView {
     }
 
     override fun showLoginLoading() {
-        loadingLogin.visible()
-        buttonLogin.gone()
+        progress_wheel.visible()
+        button_login.gone()
     }
 
     override fun hideLoginLoading() {
-        loadingLogin.gone()
-        buttonLogin.visible()
+        progress_wheel.gone()
+        button_login.visible()
     }
 
     @OnClick(R.id.text_recover_password, R.id.text_sign_in, R.id.button_login)
@@ -61,8 +54,9 @@ class LoginActivity : BaseActivity(), LoginView {
         when (view.id) {
             R.id.text_recover_password -> presenter.navigateToRecoverPassword()
             R.id.text_sign_in -> presenter.navigateToSignIn()
-            R.id.button_login -> presenter.login(inputEmail.text(),
-                    inputPassword.text())
+            R.id.button_login -> presenter.login(
+                    input_email.text(),
+                    input_password.text())
         }
     }
 }

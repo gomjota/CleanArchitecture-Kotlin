@@ -11,27 +11,14 @@ import com.github.juan1393.cleanArchitectureKotlin.app.di.subcomponent.signIn.Si
 import com.github.juan1393.cleanArchitectureKotlin.ui.base.*
 import com.github.juan1393.cleanArchitectureKotlin.ui.signIn.presenter.SignInPresenter
 import com.pnikosis.materialishprogress.ProgressWheel
+import kotlinx.android.synthetic.main.activity_sign_in.*
+import kotlinx.android.synthetic.main.progress_bar_default.*
 import javax.inject.Inject
 
 class SignInActivity : BaseActivity(), SignInView {
 
     @Inject
     lateinit var presenter: SignInPresenter
-
-    @BindView(R.id.input_name)
-    lateinit var inputName: EditText
-    @BindView(R.id.input_surname)
-    lateinit var inputSurname: EditText
-    @BindView(R.id.input_email)
-    lateinit var inputEmail: EditText
-    @BindView(R.id.input_password)
-    lateinit var inputPassword: EditText
-    @BindView(R.id.input_repeat_password)
-    lateinit var inputRepeatPassword: EditText
-    @BindView(R.id.button_sign_in)
-    lateinit var buttonSignIn: Button
-    @BindView(R.id.progress_wheel)
-    lateinit var loadingSignIn: ProgressWheel
 
     override var layoutId: Int = R.layout.activity_sign_in
 
@@ -65,23 +52,23 @@ class SignInActivity : BaseActivity(), SignInView {
     }
 
     override fun showSignInLoading() {
-        loadingSignIn.visible()
-        buttonSignIn.gone()
+        progress_wheel.visible()
+        button_sign_in.gone()
     }
 
     override fun hideSignInLoading() {
-        loadingSignIn.gone()
-        buttonSignIn.visible()
+        progress_wheel.gone()
+        button_sign_in.visible()
     }
 
     @OnClick(R.id.button_sign_in)
-    fun onViewClicked() {
+    fun onClick() {
         presenter.signIn(
-                inputName.text(),
-                inputSurname.text(),
-                inputEmail.text(),
-                inputPassword.text(),
-                inputRepeatPassword.text())
+                input_name.text(),
+                input_surname.text(),
+                input_email.text(),
+                input_password.text(),
+                input_repeat_password.text())
     }
 
 }

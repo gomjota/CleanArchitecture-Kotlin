@@ -11,8 +11,9 @@ import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.recoverPasswor
 import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.signIn.SignInRequest
 
 
-class UserRepository(val networkDataSource: NetworkDataSource, val diskDataSource: DiskDataSource,
-                     val cacheDataSource: CacheDataSource) {
+class UserRepository(private val networkDataSource: NetworkDataSource,
+                     private val diskDataSource: DiskDataSource,
+                     private val cacheDataSource: CacheDataSource) {
 
     fun getCurrentUser(): Response<User> {
         var user = cacheDataSource.user

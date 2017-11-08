@@ -11,6 +11,8 @@ import com.github.juan1393.cleanArchitectureKotlin.app.di.subcomponent.recoverPa
 import com.github.juan1393.cleanArchitectureKotlin.ui.base.*
 import com.github.juan1393.cleanArchitectureKotlin.ui.recoverPassword.presenter.RecoverPasswordPresenter
 import com.pnikosis.materialishprogress.ProgressWheel
+import kotlinx.android.synthetic.main.activity_recover_password.*
+import kotlinx.android.synthetic.main.progress_bar_default.*
 import javax.inject.Inject
 
 
@@ -18,13 +20,6 @@ class RecoverPasswordActivity : BaseActivity(), RecoverPasswordView {
 
     @Inject
     lateinit var presenter: RecoverPasswordPresenter
-
-    @BindView(R.id.input_email)
-    lateinit var inputEmail: EditText
-    @BindView(R.id.button_recover_password)
-    lateinit var buttonRecoverPassword: Button
-    @BindView(R.id.progress_wheel)
-    lateinit var loadingRecoverPassword: ProgressWheel
 
     override var layoutId: Int = R.layout.activity_recover_password
 
@@ -42,19 +37,19 @@ class RecoverPasswordActivity : BaseActivity(), RecoverPasswordView {
     }
 
     override fun showRecoverPasswordLoading() {
-        loadingRecoverPassword.visible()
-        buttonRecoverPassword.gone()
+        progress_wheel.visible()
+        button_recover_password.gone()
     }
 
     override fun hideRecoverPasswordLoading() {
-        loadingRecoverPassword.gone()
-        buttonRecoverPassword.visible()
+        progress_wheel.gone()
+        button_recover_password.visible()
     }
 
     @OnClick(R.id.button_recover_password)
     fun onViewClicked(view: View) {
         when (view.id) {
-            R.id.button_recover_password -> presenter.recoverPassword(inputEmail.text())
+            R.id.button_recover_password -> presenter.recoverPassword(input_email.text())
         }
     }
 }
