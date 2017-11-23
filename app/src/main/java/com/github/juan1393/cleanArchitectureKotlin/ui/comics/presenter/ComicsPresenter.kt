@@ -15,10 +15,15 @@ class ComicsPresenter(override val view: ComicsView,
                       private val getComicsUseCase: GetComicsUseCase) :
         Presenter<ComicsView>, GetComicsResponse {
 
+    companion object {
+        private val CHARACTER_CAPTAIN_AMERICA_ID = 1009220
+        private val MAX_COMICS = 20
+    }
+
     private var comics = listOf<Comic>()
 
     fun getComics() {
-        val request = GetComicsRequest()
+        val request = GetComicsRequest(CHARACTER_CAPTAIN_AMERICA_ID, MAX_COMICS)
         getComicsUseCase.execute(request, this)
     }
 
@@ -39,7 +44,7 @@ class ComicsPresenter(override val view: ComicsView,
     }
 
     override fun clearView() {
-
+        view.hideProgressWheel()
     }
 
 }

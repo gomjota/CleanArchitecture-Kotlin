@@ -13,9 +13,7 @@ class NetworkGetComicsRequest(private val getComicsRequest: GetComicsRequest,
     : NetworkMarvelRequest<NetworkGetComicsResponse>(networkClientManager) {
 
     companion object {
-        private val CHARACTER_ID = 1009220
         private val FORMAT = "comic"
-        private val LIMIT = 20
     }
 
     @Throws(NetworkConnectionException::class, NetworkServiceException::class)
@@ -23,9 +21,9 @@ class NetworkGetComicsRequest(private val getComicsRequest: GetComicsRequest,
         val params = hashMapOf(
                 "format" to FORMAT,
                 "formatType" to FORMAT,
-                "limit" to LIMIT)
+                "limit" to getComicsRequest.maxItems)
 
-        val call = API.getComics(params)
+        val call = API.getComics(getComicsRequest.characterId, params)
         return execute(call)
     }
 }
