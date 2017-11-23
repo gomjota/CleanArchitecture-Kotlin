@@ -25,7 +25,7 @@ class LoginPresenter(override val view: LoginView,
     fun navigateToRecoverPassword() = navigator.toRecoverPassword()
 
     override fun onUserLoggedIn(user: User) {
-        navigator.toMain()
+        //navigator.toMain()
     }
 
     override fun onIncorrectLoginUserData() {

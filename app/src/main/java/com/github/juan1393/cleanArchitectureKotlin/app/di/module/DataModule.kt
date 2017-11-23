@@ -1,9 +1,7 @@
 package com.github.juan1393.cleanArchitectureKotlin.app.di.module
 
 import com.github.juan1393.cleanArchitectureKotlin.App
-import com.github.juan1393.cleanArchitectureKotlin.data.mapper.ComicEntityDataMapper
 import com.github.juan1393.cleanArchitectureKotlin.data.mapper.NetworkAuthenticationResponseToUserEntityMapper
-import com.github.juan1393.cleanArchitectureKotlin.data.mapper.NetworkGetComicsResponseToComicEntityMapper
 import com.github.juan1393.cleanArchitectureKotlin.data.mapper.UserEntityDataMapper
 import com.github.juan1393.cleanArchitectureKotlin.data.source.cache.CacheDataSource
 import com.github.juan1393.cleanArchitectureKotlin.data.source.disk.DiskDataSource
@@ -19,12 +17,10 @@ class DataModule {
     @Provides
     @Singleton
     fun provideNetworkDataSource(networkClientManager: NetworkClientManager,
-                                 networkAuthenticationResponseToUserEntityMapper: NetworkAuthenticationResponseToUserEntityMapper,
-                                 networkGetComicsResponseToComicEntityMapper: NetworkGetComicsResponseToComicEntityMapper)
+                                 networkAuthenticationResponseToUserEntityMapper: NetworkAuthenticationResponseToUserEntityMapper)
             = NetworkDataSource(
             networkClientManager,
-            networkAuthenticationResponseToUserEntityMapper,
-            networkGetComicsResponseToComicEntityMapper)
+            networkAuthenticationResponseToUserEntityMapper)
 
     @Provides
     @Singleton
@@ -48,16 +44,6 @@ class DataModule {
 
     @Provides
     @Singleton
-    fun provideNetworkGetComicsResponseToComicEntityMapper()
-            = NetworkGetComicsResponseToComicEntityMapper()
-
-    @Provides
-    @Singleton
     fun provideUserEntityDataMapper()
             = UserEntityDataMapper()
-
-    @Provides
-    @Singleton
-    fun provideComicEntityDataMapper()
-            = ComicEntityDataMapper()
 }

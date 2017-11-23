@@ -1,7 +1,6 @@
 package com.github.juan1393.cleanArchitectureKotlin.data.source.network.request.getComics
 
 import com.google.gson.annotations.SerializedName
-import java.util.*
 
 
 class NetworkGetComicsResponse(@SerializedName("data") val data: NetworkData)

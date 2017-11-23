@@ -9,6 +9,7 @@ import retrofit2.http.QueryMap
 
 interface MarvelAPI {
 
-    @GET("v1/public/comics")
-    fun getComics(@QueryMap params: HashMap<String, Any>): Call<NetworkGetComicsResponse>
+    @GET("v1/public/characters/{characterId}/comics")
+    fun getComics(@Path("characterId") characterId: Int,
+                  @QueryMap params: HashMap<String, Any>): Call<NetworkGetComicsResponse>
 }

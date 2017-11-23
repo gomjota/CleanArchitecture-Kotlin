@@ -1,16 +1,12 @@
 package com.github.juan1393.cleanArchitectureKotlin.ui.recoverPassword.activity
 
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import butterknife.BindView
 import butterknife.OnClick
 import com.github.juan1393.cleanArchitectureKotlin.R
 import com.github.juan1393.cleanArchitectureKotlin.app.di.component.ApplicationComponent
 import com.github.juan1393.cleanArchitectureKotlin.app.di.subcomponent.recoverPassword.RecoverPasswordActivityModule
 import com.github.juan1393.cleanArchitectureKotlin.ui.base.*
 import com.github.juan1393.cleanArchitectureKotlin.ui.recoverPassword.presenter.RecoverPasswordPresenter
-import com.pnikosis.materialishprogress.ProgressWheel
 import kotlinx.android.synthetic.main.activity_recover_password.*
 import kotlinx.android.synthetic.main.progress_bar_default.*
 import javax.inject.Inject

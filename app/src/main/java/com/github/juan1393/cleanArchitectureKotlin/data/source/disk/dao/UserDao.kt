@@ -2,7 +2,6 @@ package com.github.juan1393.cleanArchitectureKotlin.data.source.disk.dao
 
 import android.arch.persistence.room.*
 import com.github.juan1393.cleanArchitectureKotlin.data.entity.UserEntity
-import com.github.juan1393.cleanArchitectureKotlin.domain.model.User
 
 @Dao
 interface UserDao {

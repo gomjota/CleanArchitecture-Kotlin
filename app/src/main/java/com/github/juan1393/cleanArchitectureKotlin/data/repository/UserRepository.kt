@@ -2,7 +2,6 @@ package com.github.juan1393.cleanArchitectureKotlin.data.repository
 
 import com.github.juan1393.cleanArchitectureKotlin.data.entity.UserEntity
 import com.github.juan1393.cleanArchitectureKotlin.data.exception.UserNotFoundException
-import com.github.juan1393.cleanArchitectureKotlin.data.mapper.NetworkAuthenticationResponseToUserEntityMapper
 import com.github.juan1393.cleanArchitectureKotlin.data.mapper.UserEntityDataMapper
 import com.github.juan1393.cleanArchitectureKotlin.data.source.cache.CacheDataSource
 import com.github.juan1393.cleanArchitectureKotlin.data.source.disk.DiskDataSource

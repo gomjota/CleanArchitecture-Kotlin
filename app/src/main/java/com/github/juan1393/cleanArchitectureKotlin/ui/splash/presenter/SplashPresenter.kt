@@ -22,7 +22,7 @@ class SplashPresenter(override val view: SplashView,
     }
 
     override fun onCurrentUserReceived(user: User) {
-        navigator.toMain()
+        //navigator.toMain()
     }
 
     override fun clearView() {}

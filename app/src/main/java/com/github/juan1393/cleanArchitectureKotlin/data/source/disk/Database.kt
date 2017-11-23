@@ -3,7 +3,6 @@ package com.github.juan1393.cleanArchitectureKotlin.data.source.disk
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
-import android.arch.persistence.room.TypeConverters
 import com.github.juan1393.cleanArchitectureKotlin.App
 import com.github.juan1393.cleanArchitectureKotlin.data.entity.TokenEntity
 import com.github.juan1393.cleanArchitectureKotlin.data.entity.UserEntity

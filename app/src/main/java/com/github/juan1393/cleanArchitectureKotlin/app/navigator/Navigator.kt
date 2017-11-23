@@ -4,10 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.github.juan1393.cleanArchitectureKotlin.domain.model.Comic
 import com.github.juan1393.cleanArchitectureKotlin.ui.base.BaseActivity
-import com.github.juan1393.cleanArchitectureKotlin.ui.comicDetail.activity.ComicDetailActivity
-import com.github.juan1393.cleanArchitectureKotlin.ui.comicDetail.presenter.ComicDetailPresenter
 import com.github.juan1393.cleanArchitectureKotlin.ui.login.activity.LoginActivity
-import com.github.juan1393.cleanArchitectureKotlin.ui.main.activity.MainActivity
 import com.github.juan1393.cleanArchitectureKotlin.ui.recoverPassword.activity.RecoverPasswordActivity
 import com.github.juan1393.cleanArchitectureKotlin.ui.signUp.activity.SignUpActivity
 import com.github.juan1393.cleanArchitectureKotlin.ui.splash.activity.SplashActivity
@@ -41,10 +38,6 @@ class Navigator {
         toDefaultActivity(LoginActivity::class.java)
     }
 
-    fun toMain() {
-        toDefaultActivityCleaningStack(MainActivity::class.java)
-    }
-
     fun toSignUp() {
         toDefaultActivity(SignUpActivity::class.java)
     }
@@ -55,14 +48,6 @@ class Navigator {
 
     fun toLoginCleaningStack() {
         toDefaultActivityCleaningStack(LoginActivity::class.java)
-    }
-
-    fun toComicDetail(comic: Comic) {
-        val intent = Intent(currentActivity, ComicDetailActivity::class.java)
-        val bundle = Bundle()
-        bundle.putSerializable(ComicDetailPresenter.COMIC_PARAMETER, comic)
-        intent.putExtras(bundle)
-        currentActivity?.startActivity(intent)
     }
 
     fun finishActivity() {

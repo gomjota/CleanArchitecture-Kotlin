@@ -1,16 +1,12 @@
 package com.github.juan1393.cleanArchitectureKotlin.ui.login.activity
 
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import butterknife.BindView
 import butterknife.OnClick
 import com.github.juan1393.cleanArchitectureKotlin.R
 import com.github.juan1393.cleanArchitectureKotlin.app.di.component.ApplicationComponent
 import com.github.juan1393.cleanArchitectureKotlin.app.di.subcomponent.login.LoginActivityModule
 import com.github.juan1393.cleanArchitectureKotlin.ui.base.*
 import com.github.juan1393.cleanArchitectureKotlin.ui.login.presenter.LoginPresenter
-import com.pnikosis.materialishprogress.ProgressWheel
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.progress_bar_default.*
 import javax.inject.Inject

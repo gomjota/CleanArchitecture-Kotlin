@@ -4,11 +4,11 @@ import com.github.juan1393.cleanArchitectureKotlin.data.exception.IncorrectAuthe
 import com.github.juan1393.cleanArchitectureKotlin.data.exception.MapperException
 import com.github.juan1393.cleanArchitectureKotlin.data.exception.NetworkConnectionException
 import com.github.juan1393.cleanArchitectureKotlin.data.exception.NetworkServiceException
+import com.github.juan1393.cleanArchitectureKotlin.data.repository.UserRepository
 import com.github.juan1393.cleanArchitectureKotlin.domain.model.User
 import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.base.BaseUseCase
 import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.executor.MainThread
 import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.executor.UseCaseExecutor
-import com.github.juan1393.cleanArchitectureKotlin.data.repository.UserRepository
 import java.security.NoSuchAlgorithmException
 
 

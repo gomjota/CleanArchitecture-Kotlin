@@ -22,7 +22,7 @@ class SignUpPresenter(override val view: SignUpView,
     }
 
     override fun onUserSignedIn(user: User) {
-        navigator.toMain()
+        //navigator.toMain()
     }
 
     override fun onUserAlreadyExists() {
