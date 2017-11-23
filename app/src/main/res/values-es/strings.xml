@@ -30,4 +30,11 @@
     <string name="sign_in_repeat_password">Repite la contraseña</string>
     <string name="sign_in_error_password_not_match">Las contraseñas no coinciden</string>
     <string name="sign_out_sign_out">Cerrar sesión</string>
+    <string name="error_character_comics_not_found">Ups! Captain America is busy right now. Please, try later</string>
+    <string name="error_network_connection">Ups! Parece que no tienes conexión a Internet. Por favor, inténtalo de nuevo</string>
+    <string name="error_comic_not_valid">Ups! Parece que este cómic no tiene información disponible :(</string>
+    <string name="comic_detail_characters">Personajes</string>
+    <string name="comic_detail_creators">Creadores</string>
+    <string name="comic_detail_release_date">Fecha de lanzamiento</string>
+    <string name="comic_detail_price">Precio</string>
 </resources>

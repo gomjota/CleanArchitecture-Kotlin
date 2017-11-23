@@ -29,5 +29,12 @@
     <string name="sign_in_repeat_password">Repeat the password</string>
     <string name="sign_in_error_password_not_match">Passwords do not match</string>
     <string name="sign_out_sign_out">Sign out</string>
+    <string name="error_character_comics_not_found">Ups! Captain America is busy right now. Please, try later</string>
+    <string name="error_network_connection">Ups! It seems you have lost your Internet connection. Please, try later</string>
+    <string name="error_comic_not_valid">Ups! It seems the comic selected has not enough information :(</string>
+    <string name="comic_detail_characters">Characters</string>
+    <string name="comic_detail_creators">Creators</string>
+    <string name="comic_detail_release_date">Release date</string>
+    <string name="comic_detail_price">Price</string>
 
 </resources>

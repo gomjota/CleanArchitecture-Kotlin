@@ -1,23 +1,30 @@
 package com.github.juan1393.cleanArchitectureKotlin.data.source.network
 
 
+import com.github.juan1393.cleanArchitectureKotlin.data.entity.ComicEntity
+import com.github.juan1393.cleanArchitectureKotlin.data.entity.UserEntity
 import com.github.juan1393.cleanArchitectureKotlin.data.exception.*
-import com.github.juan1393.cleanArchitectureKotlin.data.mapper.NetworkAuthenticationResponseToUserMapper
+import com.github.juan1393.cleanArchitectureKotlin.data.mapper.NetworkAuthenticationResponseToUserEntityMapper
+import com.github.juan1393.cleanArchitectureKotlin.data.mapper.NetworkGetComicsResponseToComicEntityMapper
 import com.github.juan1393.cleanArchitectureKotlin.data.source.network.manager.NetworkClientManager
 import com.github.juan1393.cleanArchitectureKotlin.data.source.network.model.NetworkError
+import com.github.juan1393.cleanArchitectureKotlin.data.source.network.request.base.auth.NetworkUserAuthenticationResponse
+import com.github.juan1393.cleanArchitectureKotlin.data.source.network.request.getComics.NetworkGetComicsRequest
+import com.github.juan1393.cleanArchitectureKotlin.data.source.network.request.getComics.NetworkGetComicsResponse
 import com.github.juan1393.cleanArchitectureKotlin.data.source.network.request.login.NetworkLoginRequest
 import com.github.juan1393.cleanArchitectureKotlin.data.source.network.request.recoverPassword.NetworkRecoverPasswordRequest
-import com.github.juan1393.cleanArchitectureKotlin.data.source.network.request.signIn.NetworkSignInRequest
-import com.github.juan1393.cleanArchitectureKotlin.domain.model.User
+import com.github.juan1393.cleanArchitectureKotlin.data.source.network.request.signUp.NetworkSignUpRequest
 import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.base.Response
+import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.getComics.GetComicsRequest
 import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.login.LoginRequest
 import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.recoverPassword.RecoverPasswordRequest
-import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.signIn.SignInRequest
+import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.signUp.SignUpRequest
 
-class NetworkDataSource(var networkClientManager: NetworkClientManager) {
+class NetworkDataSource(private var networkClientManager: NetworkClientManager,
+                        private val networkAuthenticationResponseToUserEntityMapper: NetworkAuthenticationResponseToUserEntityMapper,
+                        private val networkGetComicsResponseToComicEntityMapper: NetworkGetComicsResponseToComicEntityMapper) {
 
-    @Throws(NetworkConnectionException::class, NetworkServiceException::class, IncorrectAuthenticationCredentialsException::class)
-    fun login(request: LoginRequest): Response<User> {
+    fun login(request: LoginRequest): Response<UserEntity> {
         val networkResponse = NetworkLoginRequest(request, networkClientManager).run()
 
         if (!networkResponse.isSuccessful) {
@@ -28,12 +35,11 @@ class NetworkDataSource(var networkClientManager: NetworkClientManager) {
             throw NetworkServiceException()
         }
 
-        return Response(NetworkAuthenticationResponseToUserMapper().map(networkResponse.data!!))
+        return Response(networkAuthenticationResponseToUserEntityMapper.map(networkResponse.data!!))
     }
 
-    @Throws(NetworkConnectionException::class, NetworkServiceException::class, UserAlreadyExistsException::class)
-    fun signIn(request: SignInRequest): Response<User> {
-        val networkResponse = NetworkSignInRequest(request, networkClientManager).run()
+    fun signUp(request: SignUpRequest): Response<UserEntity> {
+        val networkResponse = NetworkSignUpRequest(request, networkClientManager).run()
 
         if (!networkResponse.isSuccessful) {
             if (networkResponse.error?.error
@@ -43,10 +49,9 @@ class NetworkDataSource(var networkClientManager: NetworkClientManager) {
             throw NetworkServiceException()
         }
 
-        return Response(NetworkAuthenticationResponseToUserMapper().map(networkResponse.data!!))
+        return Response(networkAuthenticationResponseToUserEntityMapper.map(networkResponse.data!!))
     }
 
-    @Throws(NetworkConnectionException::class, NetworkServiceException::class, UserNotFoundException::class)
     fun recoverPassword(request: RecoverPasswordRequest): Response<Void> {
         val networkResponse = NetworkRecoverPasswordRequest(request, networkClientManager).run()
 
@@ -59,5 +64,15 @@ class NetworkDataSource(var networkClientManager: NetworkClientManager) {
         }
 
         return Response()
+    }
+
+    fun getComics(request: GetComicsRequest): Response<List<ComicEntity>> {
+        val networkResponse = NetworkGetComicsRequest(request, networkClientManager).run()
+
+        if (!networkResponse.isSuccessful) {
+            throw NetworkServiceException()
+        }
+
+        return Response(networkGetComicsResponseToComicEntityMapper.map(networkResponse.data!!))
     }
 }

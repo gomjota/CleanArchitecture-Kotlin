@@ -1,11 +1,15 @@
 package com.github.juan1393.cleanArchitectureKotlin.app.navigator
 
 import android.content.Intent
+import android.os.Bundle
+import com.github.juan1393.cleanArchitectureKotlin.domain.model.Comic
 import com.github.juan1393.cleanArchitectureKotlin.ui.base.BaseActivity
+import com.github.juan1393.cleanArchitectureKotlin.ui.comicDetail.activity.ComicDetailActivity
+import com.github.juan1393.cleanArchitectureKotlin.ui.comicDetail.presenter.ComicDetailPresenter
 import com.github.juan1393.cleanArchitectureKotlin.ui.login.activity.LoginActivity
 import com.github.juan1393.cleanArchitectureKotlin.ui.main.activity.MainActivity
 import com.github.juan1393.cleanArchitectureKotlin.ui.recoverPassword.activity.RecoverPasswordActivity
-import com.github.juan1393.cleanArchitectureKotlin.ui.signIn.activity.SignInActivity
+import com.github.juan1393.cleanArchitectureKotlin.ui.signUp.activity.SignUpActivity
 import com.github.juan1393.cleanArchitectureKotlin.ui.splash.activity.SplashActivity
 
 
@@ -41,8 +45,8 @@ class Navigator {
         toDefaultActivityCleaningStack(MainActivity::class.java)
     }
 
-    fun toSignIn() {
-        toDefaultActivity(SignInActivity::class.java)
+    fun toSignUp() {
+        toDefaultActivity(SignUpActivity::class.java)
     }
 
     fun toRecoverPassword() {
@@ -51,6 +55,14 @@ class Navigator {
 
     fun toLoginCleaningStack() {
         toDefaultActivityCleaningStack(LoginActivity::class.java)
+    }
+
+    fun toComicDetail(comic: Comic) {
+        val intent = Intent(currentActivity, ComicDetailActivity::class.java)
+        val bundle = Bundle()
+        bundle.putSerializable(ComicDetailPresenter.COMIC_PARAMETER, comic)
+        intent.putExtras(bundle)
+        currentActivity?.startActivity(intent)
     }
 
     fun finishActivity() {

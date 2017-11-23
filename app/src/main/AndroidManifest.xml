@@ -15,19 +15,14 @@
         <activity
             android:name=".ui.splash.activity.SplashActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name=".ui.login.activity.LoginActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".ui.signIn.activity.SignInActivity"
+            android:name=".ui.signUp.activity.SignUpActivity"
             android:screenOrientation="portrait" />
 
         <activity
@@ -37,5 +32,19 @@
         <activity
             android:name=".ui.main.activity.MainActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.comics.activity.ComicsActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.comicDetail.activity.ComicDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 </manifest>

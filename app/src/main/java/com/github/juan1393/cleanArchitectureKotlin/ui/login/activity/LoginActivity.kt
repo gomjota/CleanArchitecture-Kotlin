@@ -53,7 +53,7 @@ class LoginActivity : BaseActivity(), LoginView {
     fun onViewClicked(view: View) {
         when (view.id) {
             R.id.text_recover_password -> presenter.navigateToRecoverPassword()
-            R.id.text_sign_in -> presenter.navigateToSignIn()
+            R.id.text_sign_in -> presenter.navigateToSignUp()
             R.id.button_login -> presenter.login(
                     input_email.text(),
                     input_password.text())

@@ -6,4 +6,10 @@
 
     <color name="colorProgressBarDefault">#5588FF</color>
     <color name="colorAppNameSplash">#000000</color>
+    <color name="colorItemComicTitle">#1E1E1E</color>
+    <color name="colorComicImage">#D8D8D8</color>
+    <color name="colorComicDetailImage">#D8D8D8</color>
+    <color name="colorComicDetailTitle">#1E1E1E</color>
+    <color name="colorComicDetailBody">#2D2D2D</color>
+    <color name="colorComicDetailHeader">#1E1E1E</color>
 </resources>

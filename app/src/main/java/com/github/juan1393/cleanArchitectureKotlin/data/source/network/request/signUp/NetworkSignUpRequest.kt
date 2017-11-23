@@ -1,0 +1,34 @@
+package com.github.juan1393.cleanArchitectureKotlin.data.source.network.request.signUp
+
+
+import com.github.juan1393.cleanArchitectureKotlin.data.exception.NetworkConnectionException
+import com.github.juan1393.cleanArchitectureKotlin.data.exception.NetworkServiceException
+import com.github.juan1393.cleanArchitectureKotlin.data.source.network.manager.NetworkClientManager
+import com.github.juan1393.cleanArchitectureKotlin.data.source.network.model.NetworkResponse
+import com.github.juan1393.cleanArchitectureKotlin.data.source.network.model.body.NetworkSignUpBody
+import com.github.juan1393.cleanArchitectureKotlin.data.source.network.request.base.NetworkRequest
+import com.github.juan1393.cleanArchitectureKotlin.data.source.network.request.base.auth.NetworkUserAuthenticationResponse
+import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.signUp.SignUpRequest
+
+class NetworkSignUpRequest(private val signUpRequest: SignUpRequest,
+                           var networkClientManager: NetworkClientManager) :
+        NetworkRequest<NetworkUserAuthenticationResponse>(networkClientManager) {
+
+    @Throws(NetworkConnectionException::class, NetworkServiceException::class)
+    override fun run(): NetworkResponse<NetworkUserAuthenticationResponse> {
+        val networkSignUpBody = NetworkSignUpBody(
+                signUpRequest.name,
+                signUpRequest.surname,
+                signUpRequest.email,
+                signUpRequest.password)
+
+        val call = API.signUp(networkSignUpBody)
+        val response = execute(call)
+
+        if (response.isSuccessful) {
+            networkClientManager.updateToken(response.data!!.token)
+        }
+
+        return response
+    }
+}

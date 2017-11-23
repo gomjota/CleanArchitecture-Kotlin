@@ -21,7 +21,7 @@ class LoginPresenter(override val view: LoginView,
         loginUseCase.execute(request, this)
     }
 
-    fun navigateToSignIn() = navigator.toSignIn()
+    fun navigateToSignUp() = navigator.toSignUp()
     fun navigateToRecoverPassword() = navigator.toRecoverPassword()
 
     override fun onUserLoggedIn(user: User) {

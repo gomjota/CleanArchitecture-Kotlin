@@ -1,23 +1,23 @@
-package com.github.juan1393.cleanArchitectureKotlin.app.di.subcomponent.signIn
+package com.github.juan1393.cleanArchitectureKotlin.app.di.subcomponent.signUp
 
 import com.github.juan1393.cleanArchitectureKotlin.app.di.module.ActivityModule
 import com.github.juan1393.cleanArchitectureKotlin.app.di.scope.ActivityScope
 import com.github.juan1393.cleanArchitectureKotlin.app.navigator.Navigator
-import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.signIn.SignInUseCase
-import com.github.juan1393.cleanArchitectureKotlin.ui.signIn.activity.SignInActivity
-import com.github.juan1393.cleanArchitectureKotlin.ui.signIn.activity.SignInView
-import com.github.juan1393.cleanArchitectureKotlin.ui.signIn.presenter.SignInPresenter
+import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.signUp.SignUpUseCase
+import com.github.juan1393.cleanArchitectureKotlin.ui.signUp.activity.SignUpActivity
+import com.github.juan1393.cleanArchitectureKotlin.ui.signUp.activity.SignUpView
+import com.github.juan1393.cleanArchitectureKotlin.ui.signUp.presenter.SignUpPresenter
 import dagger.Module
 import dagger.Provides
 
 
 @Module
-class SignInActivityModule(activity: SignInActivity) : ActivityModule(activity) {
+class SignUpActivityModule(activity: SignUpActivity) : ActivityModule(activity) {
 
     @Provides @ActivityScope
-    fun provideSignInView(): SignInView = activity as SignInView
+    fun provideSignUpView(): SignUpView = activity as SignUpView
 
     @Provides @ActivityScope
-    fun provideSignInPresenter(view: SignInView, navigator: Navigator, signInUseCase: SignInUseCase)
-            = SignInPresenter(view, navigator, signInUseCase)
+    fun provideSignUpPresenter(view: SignUpView, navigator: Navigator, signUpUseCase: SignUpUseCase)
+            = SignUpPresenter(view, navigator, signUpUseCase)
 }
