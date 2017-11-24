@@ -15,7 +15,5 @@ interface ComicDetailView : PresentationView {
 
     fun setCreators(creators: String)
 
-    fun setReleaseDate(date: String)
-
     fun setPrice(price: String)
 }

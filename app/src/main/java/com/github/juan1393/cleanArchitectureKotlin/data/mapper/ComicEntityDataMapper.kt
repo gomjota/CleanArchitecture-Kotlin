@@ -18,7 +18,6 @@ class ComicEntityDataMapper: Mapper<ComicEntity, Comic> {
                     getTitle(input),
                     getDescription(input),
                     getPageCount(input),
-                    getReleaseDate(input),
                     getPrintPrice(input),
                     getThumbnailUrl(input),
                     getImagesUrl(input),
@@ -33,9 +32,6 @@ class ComicEntityDataMapper: Mapper<ComicEntity, Comic> {
     private fun getDescription(input: ComicEntity): String? = input.description
 
     private fun getPageCount(input: ComicEntity): Int? = input.pageCount
-
-    private fun getReleaseDate(input: ComicEntity): String? =
-            input.releaseDate
 
     private fun getPrintPrice(input: ComicEntity): Float? =
             input.printPrice

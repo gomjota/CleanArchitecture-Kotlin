@@ -18,7 +18,6 @@ class NetworkGetComicsResponseToComicEntityMapper : Mapper<NetworkGetComicsRespo
                         getTitle(it),
                         getDescription(it),
                         getPageCount(it),
-                        getReleaseDate(it),
                         getPrintPrice(it),
                         getThumbnailUrl(it),
                         getImagesUrl(it),
@@ -35,9 +34,6 @@ class NetworkGetComicsResponseToComicEntityMapper : Mapper<NetworkGetComicsRespo
     private fun getDescription(input: NetworkResult): String? = input.description
 
     private fun getPageCount(input: NetworkResult): Int? = input.pageCount
-
-    private fun getReleaseDate(input: NetworkResult): String? =
-            input.dates?.first { it.type == "onsaleDate" }?.date
 
     private fun getPrintPrice(input: NetworkResult): Float? =
             input.prices?.first { it.type == "printPrice" }?.price

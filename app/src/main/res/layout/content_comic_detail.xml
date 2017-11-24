@@ -66,22 +66,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="@string/comic_detail_release_date"
-            android:textColor="@color/colorComicDetailHeader"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/comic_detail_release_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/colorComicDetailBody"
-            android:textSize="14sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:text="@string/comic_detail_price"
             android:textColor="@color/colorComicDetailHeader"
             android:textSize="16sp" />

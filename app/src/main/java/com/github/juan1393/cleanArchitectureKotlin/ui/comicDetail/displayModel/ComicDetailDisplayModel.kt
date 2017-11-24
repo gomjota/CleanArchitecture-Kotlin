@@ -12,7 +12,6 @@ class ComicDetailDisplayModel(comic: Comic) {
     val description: String
     val characters: String
     val creators: String
-    val releaseDate: String
     val price: String
 
     init {
@@ -21,7 +20,6 @@ class ComicDetailDisplayModel(comic: Comic) {
         this.description = formatDescription(comic)
         this.characters = formatCharacters(comic)
         this.creators = formatCreators(comic)
-        this.releaseDate = comic.releaseDate!!
         this.price = formatPrice(comic)
     }
 
@@ -37,32 +35,25 @@ class ComicDetailDisplayModel(comic: Comic) {
 
     private fun formatCharacters(comic: Comic): String {
         var characters = ""
-        for (i in 0 until comic.characters!!.size) {
-            val character = comic.characters!![i]
+        val size = comic.characters!!.size
+        comic.characters!!.forEachIndexed { index, character ->
             characters += character.name
-            if (i != comic.characters!!.size - 1) {
-                characters += ", "
-            }
+            if (index != size - 1) characters += ", "
         }
+
         return characters
     }
 
     private fun formatCreators(comic: Comic): String {
         var creators = ""
-        for (i in 0 until comic.creators!!.size) {
-            val creator = comic.creators!![i]
+        val size = comic.creators!!.size
+        comic.creators!!.forEachIndexed { index, creator ->
             creators += creator.name
-            if (i != comic.creators!!.size - 1) {
-                creators += ", "
-            }
+            if (index != size - 1) creators += ", "
         }
+
         return creators
     }
 
-    /*private fun formatReleaseDate(comic: Comic): String {
-        val dateFormat = SimpleDateFormat("dd/MM/yyyy")
-        return dateFormat.format(comic.releaseDate)
-    }*/
-
-    private fun formatPrice(comic: Comic): String = comic.printPrice.toString()
+    private fun formatPrice(comic: Comic): String = comic.printPrice.toString() + "$"
 }

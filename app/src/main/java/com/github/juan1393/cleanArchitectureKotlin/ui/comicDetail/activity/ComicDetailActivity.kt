@@ -58,10 +58,6 @@ class ComicDetailActivity : BaseActivity(), ComicDetailView {
         comic_detail_creators.text = creators
     }
 
-    override fun setReleaseDate(date: String) {
-        comic_detail_release_date.text = date
-    }
-
     override fun setPrice(price: String) {
         comic_detail_price.text = price
     }

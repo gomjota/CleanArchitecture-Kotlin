@@ -14,6 +14,7 @@ class NetworkGetComicsRequest(private val getComicsRequest: GetComicsRequest,
 
     companion object {
         private val FORMAT = "comic"
+        private val OFFSET = "20" // Because latest comics has data issues
     }
 
     @Throws(NetworkConnectionException::class, NetworkServiceException::class)
@@ -21,6 +22,7 @@ class NetworkGetComicsRequest(private val getComicsRequest: GetComicsRequest,
         val params = hashMapOf(
                 "format" to FORMAT,
                 "formatType" to FORMAT,
+                "offset" to OFFSET,
                 "limit" to getComicsRequest.maxItems)
 
         val call = API.getComics(getComicsRequest.characterId, params)

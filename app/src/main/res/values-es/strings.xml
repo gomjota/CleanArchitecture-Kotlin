@@ -35,6 +35,5 @@
     <string name="error_comic_not_valid">Ups! Parece que este cómic no tiene información disponible :(</string>
     <string name="comic_detail_characters">Personajes</string>
     <string name="comic_detail_creators">Creadores</string>
-    <string name="comic_detail_release_date">Fecha de lanzamiento</string>
     <string name="comic_detail_price">Precio</string>
 </resources>

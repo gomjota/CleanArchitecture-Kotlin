@@ -25,7 +25,6 @@ class ComicDetailPresenter(override val view: ComicDetailView,
         view.setDescription(comicDetailDisplayModel.description)
         view.setCharacters(comicDetailDisplayModel.characters)
         view.setCreators(comicDetailDisplayModel.creators)
-        view.setReleaseDate(comicDetailDisplayModel.releaseDate)
         view.setPrice(comicDetailDisplayModel.price)
     }
 

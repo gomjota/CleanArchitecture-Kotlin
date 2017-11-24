@@ -53,6 +53,6 @@ object NetworkManager {
                 NetworkError::class.java,
                 arrayOfNulls<Annotation>(0))
 
-        return converter!!.convert(response.errorBody())
+        return converter!!.convert(response.errorBody()!!)
     }
 }

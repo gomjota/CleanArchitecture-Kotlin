@@ -34,7 +34,6 @@
     <string name="error_comic_not_valid">Ups! It seems the comic selected has not enough information :(</string>
     <string name="comic_detail_characters">Characters</string>
     <string name="comic_detail_creators">Creators</string>
-    <string name="comic_detail_release_date">Release date</string>
     <string name="comic_detail_price">Price</string>
 
 </resources>

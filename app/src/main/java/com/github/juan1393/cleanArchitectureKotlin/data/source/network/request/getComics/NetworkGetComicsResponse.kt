@@ -16,15 +16,11 @@ class NetworkResult(@SerializedName("id") val id: Int? = null,
                     @SerializedName("title") val title: String? = null,
                     @SerializedName("description") val description: String? = null,
                     @SerializedName("pageCount") val pageCount: Int? = null,
-                    @SerializedName("dates") val dates: List<NetworkDate>? = null,
                     @SerializedName("prices") val prices: List<NetworkPrice>? = null,
                     @SerializedName("thumbnail") val thumbnail: NetworkThumbnail? = null,
                     @SerializedName("images") val images: List<NetworkImage>? = null,
                     @SerializedName("creators") val creators: NetworkCreators? = null,
                     @SerializedName("characters") val characters: NetworkCharacters? = null)
-
-class NetworkDate(@SerializedName("type") val type: String,
-                  @SerializedName("date") val date: String)
 
 class NetworkPrice(@SerializedName("type") val type: String,
                    @SerializedName("price") val price: Float)
