@@ -3,14 +3,14 @@ package com.github.juan1393.cleanArchitectureKotlin.app.navigator
 import android.content.Intent
 import android.os.Bundle
 import com.github.juan1393.cleanArchitectureKotlin.domain.model.Comic
-import com.github.juan1393.cleanArchitectureKotlin.ui.base.BaseActivity
-import com.github.juan1393.cleanArchitectureKotlin.ui.comicDetail.activity.ComicDetailActivity
-import com.github.juan1393.cleanArchitectureKotlin.ui.comicDetail.presenter.ComicDetailPresenter
-import com.github.juan1393.cleanArchitectureKotlin.ui.login.activity.LoginActivity
-import com.github.juan1393.cleanArchitectureKotlin.ui.main.activity.MainActivity
-import com.github.juan1393.cleanArchitectureKotlin.ui.recoverPassword.activity.RecoverPasswordActivity
-import com.github.juan1393.cleanArchitectureKotlin.ui.signUp.activity.SignUpActivity
-import com.github.juan1393.cleanArchitectureKotlin.ui.splash.activity.SplashActivity
+import com.github.juan1393.cleanArchitectureKotlin.app.ui.base.BaseActivity
+import com.github.juan1393.cleanArchitectureKotlin.app.ui.comicDetail.activity.ComicDetailActivity
+import com.github.juan1393.cleanArchitectureKotlin.app.ui.comicDetail.presenter.ComicDetailPresenter
+import com.github.juan1393.cleanArchitectureKotlin.app.ui.login.activity.LoginActivity
+import com.github.juan1393.cleanArchitectureKotlin.app.ui.main.activity.MainActivity
+import com.github.juan1393.cleanArchitectureKotlin.app.ui.recoverPassword.activity.RecoverPasswordActivity
+import com.github.juan1393.cleanArchitectureKotlin.app.ui.signUp.activity.SignUpActivity
+import com.github.juan1393.cleanArchitectureKotlin.app.ui.splash.activity.SplashActivity
 
 
 class Navigator {

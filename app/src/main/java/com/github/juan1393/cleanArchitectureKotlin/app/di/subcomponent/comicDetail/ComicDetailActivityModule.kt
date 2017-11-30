@@ -3,12 +3,11 @@ package com.github.juan1393.cleanArchitectureKotlin.app.di.subcomponent.comicDet
 import com.github.juan1393.cleanArchitectureKotlin.app.di.module.ActivityModule
 import com.github.juan1393.cleanArchitectureKotlin.app.di.scope.ActivityScope
 import com.github.juan1393.cleanArchitectureKotlin.app.navigator.Navigator
-import com.github.juan1393.cleanArchitectureKotlin.ui.comicDetail.activity.ComicDetailActivity
-import com.github.juan1393.cleanArchitectureKotlin.ui.comicDetail.activity.ComicDetailView
-import com.github.juan1393.cleanArchitectureKotlin.ui.comicDetail.presenter.ComicDetailPresenter
+import com.github.juan1393.cleanArchitectureKotlin.app.ui.comicDetail.activity.ComicDetailActivity
+import com.github.juan1393.cleanArchitectureKotlin.app.ui.comicDetail.activity.ComicDetailView
+import com.github.juan1393.cleanArchitectureKotlin.app.ui.comicDetail.presenter.ComicDetailPresenter
 import dagger.Module
 import dagger.Provides
-import dagger.Subcomponent
 
 
 @Module

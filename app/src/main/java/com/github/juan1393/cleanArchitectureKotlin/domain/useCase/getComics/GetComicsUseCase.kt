@@ -1,15 +1,12 @@
 package com.github.juan1393.cleanArchitectureKotlin.domain.useCase.getComics
 
-import com.github.juan1393.cleanArchitectureKotlin.data.exception.IncorrectAuthenticationCredentialsException
 import com.github.juan1393.cleanArchitectureKotlin.data.exception.MapperException
 import com.github.juan1393.cleanArchitectureKotlin.data.exception.NetworkConnectionException
 import com.github.juan1393.cleanArchitectureKotlin.data.exception.NetworkServiceException
 import com.github.juan1393.cleanArchitectureKotlin.data.repository.ComicRepository
-import com.github.juan1393.cleanArchitectureKotlin.data.repository.UserRepository
 import com.github.juan1393.cleanArchitectureKotlin.domain.model.Comic
-import com.github.juan1393.cleanArchitectureKotlin.domain.model.User
 import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.base.BaseUseCase
-import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.executor.MainThread
+import com.github.juan1393.cleanArchitectureKotlin.app.ui.base.mainThread.MainThread
 import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.executor.UseCaseExecutor
 
 

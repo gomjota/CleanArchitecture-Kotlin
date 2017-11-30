@@ -4,9 +4,9 @@ import com.github.juan1393.cleanArchitectureKotlin.app.di.module.ActivityModule
 import com.github.juan1393.cleanArchitectureKotlin.app.di.scope.ActivityScope
 import com.github.juan1393.cleanArchitectureKotlin.app.navigator.Navigator
 import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.signUp.SignUpUseCase
-import com.github.juan1393.cleanArchitectureKotlin.ui.signUp.activity.SignUpActivity
-import com.github.juan1393.cleanArchitectureKotlin.ui.signUp.activity.SignUpView
-import com.github.juan1393.cleanArchitectureKotlin.ui.signUp.presenter.SignUpPresenter
+import com.github.juan1393.cleanArchitectureKotlin.app.ui.signUp.activity.SignUpActivity
+import com.github.juan1393.cleanArchitectureKotlin.app.ui.signUp.activity.SignUpView
+import com.github.juan1393.cleanArchitectureKotlin.app.ui.signUp.presenter.SignUpPresenter
 import dagger.Module
 import dagger.Provides
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.signUp.activity.SignUpActivity">
+    tools:context=".app.ui.signUp.activity.SignUpActivity">
 
     <EditText
         android:id="@+id/input_name"

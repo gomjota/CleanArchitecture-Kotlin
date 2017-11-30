@@ -1,7 +1,7 @@
 package com.github.juan1393.cleanArchitectureKotlin.app.di.module
 
 import com.github.juan1393.cleanArchitectureKotlin.data.repository.ComicRepository
-import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.executor.MainThread
+import com.github.juan1393.cleanArchitectureKotlin.app.ui.base.mainThread.MainThread
 import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.executor.UseCaseExecutor
 import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.getCurrentUser.GetCurrentUserUseCase
 import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.login.LoginUseCase

@@ -4,8 +4,8 @@ import android.content.Context
 import com.github.juan1393.cleanArchitectureKotlin.App
 import com.github.juan1393.cleanArchitectureKotlin.app.di.qualifier.ApplicationQualifier
 import com.github.juan1393.cleanArchitectureKotlin.app.navigator.Navigator
-import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.executor.MainThread
-import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.executor.MainThreadImpl
+import com.github.juan1393.cleanArchitectureKotlin.app.ui.base.mainThread.MainThread
+import com.github.juan1393.cleanArchitectureKotlin.app.ui.base.mainThread.MainThreadImpl
 import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.executor.ThreadExecutor
 import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.executor.UseCaseExecutor
 import dagger.Module

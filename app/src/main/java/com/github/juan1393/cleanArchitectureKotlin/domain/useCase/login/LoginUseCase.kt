@@ -6,7 +6,7 @@ import com.github.juan1393.cleanArchitectureKotlin.data.exception.NetworkConnect
 import com.github.juan1393.cleanArchitectureKotlin.data.exception.NetworkServiceException
 import com.github.juan1393.cleanArchitectureKotlin.domain.model.User
 import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.base.BaseUseCase
-import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.executor.MainThread
+import com.github.juan1393.cleanArchitectureKotlin.app.ui.base.mainThread.MainThread
 import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.executor.UseCaseExecutor
 import com.github.juan1393.cleanArchitectureKotlin.data.repository.UserRepository
 import java.security.NoSuchAlgorithmException

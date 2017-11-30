@@ -4,9 +4,9 @@ import com.github.juan1393.cleanArchitectureKotlin.app.di.module.ActivityModule
 import com.github.juan1393.cleanArchitectureKotlin.app.di.scope.ActivityScope
 import com.github.juan1393.cleanArchitectureKotlin.app.navigator.Navigator
 import com.github.juan1393.cleanArchitectureKotlin.domain.useCase.login.LoginUseCase
-import com.github.juan1393.cleanArchitectureKotlin.ui.login.activity.LoginActivity
-import com.github.juan1393.cleanArchitectureKotlin.ui.login.activity.LoginView
-import com.github.juan1393.cleanArchitectureKotlin.ui.login.presenter.LoginPresenter
+import com.github.juan1393.cleanArchitectureKotlin.app.ui.login.activity.LoginActivity
+import com.github.juan1393.cleanArchitectureKotlin.app.ui.login.activity.LoginView
+import com.github.juan1393.cleanArchitectureKotlin.app.ui.login.presenter.LoginPresenter
 import dagger.Module
 import dagger.Provides
 
